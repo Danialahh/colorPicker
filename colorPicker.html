@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Display</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        h1 {
+            font-size: 2rem;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="colorName">Color Name</h1>
+    
+    <script>
+        // Array of colors to choose from
+        const colors = ["red", "orange", "green", "blue"];
+        
+        // Function to pick a random color from the array
+        function pickRandomColor() {
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            return colors[randomIndex];
+        }
+        
+        // Apply the random color to the background and display its name
+        const selectedColor = pickRandomColor();
+        document.body.style.backgroundColor = selectedColor;
+        document.getElementById("colorName").textContent = selectedColor.charAt(0).toUpperCase() + selectedColor.slice(1);
+    </script>
+</body>
+</html>
